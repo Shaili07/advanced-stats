@@ -15,15 +15,9 @@ output:
     code_folding: hide
 ---
 
+# Explorations of Action - MoA EDA
 
-
-
-<div
-    style="background-image: url('https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
-    width:100%;
-    height:400px;
-    background-position:center;">&nbsp;
-</div>
+![Yo](https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
 
 *Photo by @freestocks on Unsplash.*
 
@@ -430,9 +424,6 @@ We find:
 - Those distributions look pretty normal, which is good. There's a bit of skew in some of them, but nothing that should warrant a transformation.
 
 
-In `dplyr` version 1.0 (and after) we can derive some statistical measures for each of these distributions (namely the min, max, mean, and standard deviation) elegantly by using the new `across` method within `summarise`. (Previously, we would have used `summarise_at` or `summarise_all`). Those are the distributions of those statistics; note that each facets has its own, tailored axis ranges:
-
-
 
 ```r
 gene_stats <- train %>%
@@ -575,9 +566,6 @@ All the targets are binary columns, indicating whether a certain cell type respo
 
 Our challenge is a **multi-label classification problem**, and as such the rows (i.e. drug samples) can have multiple MoA's (i.e. more than one target class can be active). Let's first look at the distribution of how many target classes can be active at once.
 
-Note, that here I'm using the new [dplyr rowwise syntax and philosophy](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-rowwise/), which makes it much easier to apply standard dplyr verbs to rows. Expand the code cell to see how it works.
-
-
 
 ```r
 rowstats <- targets %>%
@@ -621,7 +609,6 @@ We find:
 
 
 Looking at the targets from a different angle: which classes have the most instances of MoAs in our training data? I.e. which columns have the most 1s among the zeros? For this, we only have to sum all columns. The we plot the resulting distributions and look at the top and bottom classes. Note the logarithmic x-axis on the density plot:
-
 
 
 ```r
@@ -686,8 +673,6 @@ We find:
 
 
 As so often, this last observation opens up another avenue of investigation. Even though the class names say very little to a layman like me, I can't help to notice that there's quite a few "inhibitors", "antagonists", "agonists", and so forth. Let's try to extract those and look at their frequencies. Not all class names will fall neatly within these groups, so we only look at those that occur more than once. The idea is to use the name of the class and to extract the last word of it. Here are the resulting frequencies:
-
-
 
 ```r
 target_sums %>%
