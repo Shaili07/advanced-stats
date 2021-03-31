@@ -331,7 +331,7 @@ Everything looks as expected; very good.
 
 
 
-# Individual feature visualisations {.tabset .tabset-fade .tabset-pills}
+# Individual feature visualisations
 
 We start by plotting the distributions of the various predictor and target features individually, before moving on to multi-feature visuals and correlations. Here, we're dealing with the features group by group.
 
@@ -976,7 +976,7 @@ We find:
 
 
 
-## Interactions between sets of features {.tabset .tabset-fade .tabset-pills}
+## Interactions between sets of features
 
 In the previous section, we didn't look at every single feature interaction among the numerous gene expression or cell viability columns, but we got a pretty good overview of the strength of correlations and studied a few specific examples in more detail. Now, let's look at how the different sets of treatment, gene, and cell features interact with each other, before ultimately including the target features.
 
