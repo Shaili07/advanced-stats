@@ -1,5 +1,5 @@
 ---
-title: 'Explorations of Action - MoA EDA'
+title: 'Explorations of Action - MoA'
 date: '2021-03-31'
 author: "Dhruvil Dave and Shaili Gandhi"
 output:
@@ -15,7 +15,7 @@ output:
     code_folding: hide
 ---
 
-# Explorations of Action - MoA EDA
+# Explorations of Action - MoA 
 
 ![Yo](https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)
 
@@ -24,15 +24,13 @@ output:
 
 # Introduction
 
-This is a comprehensive Exploratory Data Analysis for the [Mechanisms of Action (MoA)](https://www.kaggle.com/c/lish-moa/) competition with [tidy R](http://tidyverse.org/) and [ggplot2](http://ggplot2.tidyverse.org/). It should provide you with all the info you need to get started, and maybe even a bit more.
-
 The aim of this challenge is to "classify drugs based on their biological activity". Pharmaceutical drug discovery aims to identify certain proteins that are associated with a specific disease, and then to develop molecules that can target those proteins. The MoA of a molecule encodes its biological activity. Our dataset describes the responses of 100 different types of human cells to various drugs. Those response patterns will be used to classify the MoA reponse.
 
 This is a **multi-label classification problem**. Drugs can have multiple MoA annotations which describe binary responses from different cell types in different ways. The [evaluation metric](https://www.kaggle.com/c/lish-moa/overview/evaluation) is the mean columnwise [log loss](https://www.kaggle.com/dansbecker/what-is-log-loss).
 
 The [data](https://www.kaggle.com/c/lish-moa/data) comes in the familiear shape of train and test files. In contrast to other competitions, here we have two separate files for the training predictors (`train_features.csv`) and the targets (`train_targets_scored.csv`). Each row corresponds to a specific treatment. In addition, we are also given an optional set of MoA targets (`train_targets_nonscored.csv`) that we don't need to predict, but can use for context analysis.
 
-The specific goal is to predict the `train_targets_scored.csv` class probabilities for the the test file `test_features.csv`. Note, that the public leaderboard is based on approximately 25% of this test data, with 75% being assigned to the private LB.
+The specific goal is to predict the `train_targets_scored.csv` class probabilities for the the test file `test_features.csv`. 
 
 
 Let's get started!
